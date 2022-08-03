@@ -26,16 +26,16 @@ namespace DSD601_SkankyBusses.Pages
         }
         public void OnPost()
         {
-            CalculateDiscount(travelCosts);
+            CityFares.AddRange(CalculateDiscount(travelCosts));
         }
 
 
 
-        private void CalculateDiscount(TravelCosts _travelCosts)
+        private List<string> CalculateDiscount(TravelCosts _travelCosts)
         { // if person is disabled, or <12 or >64 gets discount 20%
           //calculate criteria for discount price
 
-
+            //otherwise they pay the full price
 
             if (_travelCosts.IsDisabled == true || _travelCosts.Age <= _travelCosts.lowerAgeDiscount || _travelCosts.Age >= _travelCosts.UpperAgeDiscount)
             {
@@ -45,19 +45,20 @@ namespace DSD601_SkankyBusses.Pages
                 _travelCosts.Dun = DiscountFormula(_travelCosts.Dun, _travelCosts.Discount);
                 _travelCosts.Inv = DiscountFormula(_travelCosts.Inv, _travelCosts.Discount);
             }
-            // calculate full fare
+
+
+
             // Display output
             StaticList.StaticCityFares.Add(_travelCosts.FName + " " + _travelCosts.LName + " Ash=" + _travelCosts.Ash + " Tim=" + _travelCosts.Tim + " Om=" + _travelCosts.Om + " Dun=" + _travelCosts.Dun + " Inv=" + _travelCosts.Inv);
 
-            CityFares.AddRange(StaticList.StaticCityFares);
-
+            return StaticList.StaticCityFares;
         }
 
-        public Single DiscountFormula(Single City, Single Discount)
+        public double DiscountFormula(double City, double Discount)
         {
 
-            Single answer = City - (City * Discount);
-            return (float)Math.Round(answer, 2);
+            double answer = City - (City * Discount);
+            return Math.Round(answer, 2);
         }
 
 

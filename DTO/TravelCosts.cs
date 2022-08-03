@@ -8,22 +8,22 @@
         //  private bool IsDisabled, isWeekend;
 
 
-        public Single Ash { get; set; }
-        public Single Tim { get; set; }
-        public Single Om { get; set; }
-        public Single Dun { get; set; }
-        public Single Inv { get; set; }
-        public Single Discount { get; set; }
+        public double Ash { get; set; } = 17.99;
+        public double Tim { get; set; } = 24.77;
+        public double Om { get; set; } = 24.44;
+        public double Dun { get; set; } = 35.66;
+        public double Inv { get; set; } = 46.00;
+        public double Discount { get; set; } = 0.20;
 
         public int Age { get; set; }
-        public int lowerAgeDiscount { get; set; }
-        public int UpperAgeDiscount { get; set; }
+        public int lowerAgeDiscount { get; set; } = 12;
+        public int UpperAgeDiscount { get; set; } = 64;
 
         public string FName { get; set; }
         public string LName { get; set; }
 
-        public bool IsDisabled { get; set; }
-        public bool IsWeekend { get; set; }
+        public bool IsDisabled { get; set; } = false;
+        public bool IsWeekend { get; set; } = false;
 
     }
 }
