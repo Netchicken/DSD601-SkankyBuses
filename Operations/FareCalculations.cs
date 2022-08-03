@@ -1,30 +1,11 @@
 ﻿using DSD601_SkankyBusses.DTO;
-using DSD601_SkankyBusses.Operations;
 
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-
-namespace DSD601_SkankyBusses.Pages
+namespace DSD601_SkankyBusses.Operations
 {
-    [BindProperties]
-    public class IndexModel : PageModel
+    public class FareCalculations
     {
-        public TravelCostsDTO travelCosts = new TravelCostsDTO();
-        public List<string> CityFares = new List<string>();
-        public FareCalculations fareCalculations = new FareCalculations();
 
-
-        public void OnPost(TravelCostsDTO travelCosts)
-        {
-            //  CityFares.AddRange(CalculateDiscount(travelCosts));
-
-            CityFares.AddRange(fareCalculations.CalculateDiscount(travelCosts));
-
-        }
-
-
-
-        private List<string> CalculateDiscount(TravelCostsDTO _travelCosts)
+        public List<string> CalculateDiscount(TravelCostsDTO _travelCosts)
         { // if person is disabled, or <12 or >64 gets discount 20%, or the weekend.
           //calculate criteria for discount price
 
@@ -50,18 +31,6 @@ namespace DSD601_SkankyBusses.Pages
             double answer = City - (City * Discount);
             return Math.Round(answer, 2);
         }
-
-
-        
-
-        //DRY = Don't Repeat Yourself 
-
-
-
-
-
-
-
 
 
 
