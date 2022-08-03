@@ -9,21 +9,20 @@ namespace DSD601_SkankyBusses.Pages
     [BindProperties]
     public class IndexModel : PageModel
     {
-
-        public TravelCosts travelCosts = new TravelCosts();
+        public TravelCostsDTO travelCosts = new TravelCostsDTO();
         public List<string> CityFares = new List<string>();
 
 
 
-        public void OnPost(TravelCosts travelCosts)
+        public void OnPost(TravelCostsDTO travelCosts)
         {
             CityFares.AddRange(CalculateDiscount(travelCosts));
         }
 
 
 
-        private List<string> CalculateDiscount(TravelCosts _travelCosts)
-        { // if person is disabled, or <12 or >64 gets discount 20%
+        private List<string> CalculateDiscount(TravelCostsDTO _travelCosts)
+        { // if person is disabled, or <12 or >64 gets discount 20%, or the weekend.
           //calculate criteria for discount price
 
             //otherwise they pay the full price
@@ -38,7 +37,7 @@ namespace DSD601_SkankyBusses.Pages
             }
 
             // Display output
-            StaticList.StaticCityFares.Add(_travelCosts.FName + " " + _travelCosts.LName + " Ash= " + _travelCosts.Ash + " Tim: " + _travelCosts.Tim + " Om: " + _travelCosts.Om + " Dun: " + _travelCosts.Dun + " Inv: " + _travelCosts.Inv + " Is the person Disabled? " + _travelCosts.IsDisabled + " Is the travel on the weekend? "+ _travelCosts.IsWeekend + " Age " +_travelCosts.Age);
+            StaticList.StaticCityFares.Add(_travelCosts.FName + " " + _travelCosts.LName + " Ash= " + _travelCosts.Ash + " Tim: " + _travelCosts.Tim + " Om: " + _travelCosts.Om + " Dun: " + _travelCosts.Dun + " Inv: " + _travelCosts.Inv + " Is the person Disabled? " + _travelCosts.IsDisabled + " Is the travel on the weekend? " + _travelCosts.IsWeekend + " Age " + _travelCosts.Age);
 
             return StaticList.StaticCityFares;
         }

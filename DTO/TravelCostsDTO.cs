@@ -2,7 +2,7 @@
 
 namespace DSD601_SkankyBusses.DTO
 {
-    public class TravelCosts
+    public class TravelCostsDTO
     {
 
         [Display(Name = "Ashburton")]
