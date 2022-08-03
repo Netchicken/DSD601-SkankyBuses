@@ -38,7 +38,7 @@ namespace DSD601_SkankyBusses.Pages
             }
 
             // Display output
-            StaticList.StaticCityFares.Add(_travelCosts.FName + " " + _travelCosts.LName + " Ash=" + _travelCosts.Ash + " Tim=" + _travelCosts.Tim + " Om=" + _travelCosts.Om + " Dun=" + _travelCosts.Dun + " Inv=" + _travelCosts.Inv);
+            StaticList.StaticCityFares.Add(_travelCosts.FName + " " + _travelCosts.LName + " Ash= " + _travelCosts.Ash + " Tim: " + _travelCosts.Tim + " Om: " + _travelCosts.Om + " Dun: " + _travelCosts.Dun + " Inv: " + _travelCosts.Inv + " Is the person Disabled? " + _travelCosts.IsDisabled + " Is the travel on the weekend? "+ _travelCosts.IsWeekend + " Age " +_travelCosts.Age);
 
             return StaticList.StaticCityFares;
         }
