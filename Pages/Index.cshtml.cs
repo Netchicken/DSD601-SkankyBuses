@@ -15,7 +15,7 @@ namespace DSD601_SkankyBusses.Pages
 
 
 
-        public void OnPost()
+        public void OnPost(TravelCosts travelCosts)
         {
             CityFares.AddRange(CalculateDiscount(travelCosts));
         }

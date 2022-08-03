@@ -4,10 +4,6 @@ namespace DSD601_SkankyBusses.DTO
 {
     public class TravelCosts
     {
-        //  private Single Ash, Tim, Om, Dun, Inv, Discount;
-        //  private string FName, LName;
-        //  private int Age, lowerAgeDiscount, UpperAgeDiscount;
-        //  private bool IsDisabled, isWeekend;
 
         [Display(Name = "Ashburton")]
         public double Ash { get; set; } = 17.99;
@@ -21,12 +17,9 @@ namespace DSD601_SkankyBusses.DTO
         public double Inv { get; set; } = 46.00;
         [Display(Name = "Fare Discount")]
         public double Discount { get; set; } = 0.20;
-
+        [Display(Name = "What is your Age?")]
         public int Age { get; set; }
-        [Display(Name = "Lower Age Discount")]
-        public int lowerAgeDiscount { get; set; } = 12;
-        [Display(Name = "Upper Age Discount")]
-        public int UpperAgeDiscount { get; set; } = 64;
+
 
         [Display(Name = "First Name")]
         public string FName { get; set; }
@@ -35,8 +28,15 @@ namespace DSD601_SkankyBusses.DTO
 
         [Display(Name = "Are you Disabled?")]
         public bool IsDisabled { get; set; } = false;
-        [Display(Name = "Is this the Weekend")]
+        [Display(Name = "Is this the Weekend?")]
         public bool IsWeekend { get; set; } = false;
 
+
+        //Not shown on form
+
+        [Display(Name = "Lower Age Discount")]
+        public int lowerAgeDiscount { get; set; } = 12;
+        [Display(Name = "Upper Age Discount")]
+        public int UpperAgeDiscount { get; set; } = 64;
     }
 }
